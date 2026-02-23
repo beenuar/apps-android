@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android Managed Configuration schema for EMM/MDM deployment -->
+<restrictions xmlns:android="http://schemas.android.com/apk/res/android">
+    <restriction
+        android:key="master_protection_enabled"
+        android:title="@string/restriction_master_protection_title"
+        android:restrictionType="bool"
+        android:description="@string/restriction_master_protection_desc"
+        android:defaultValue="true" />
+    <restriction
+        android:key="protection_level"
+        android:title="@string/restriction_protection_level_title"
+        android:restrictionType="choice"
+        android:description="@string/restriction_protection_level_desc"
+        android:entryValues="@array/restriction_protection_level_values"
+        android:entries="@array/restriction_protection_level_entries"
+        android:defaultValue="balanced" />
+    <restriction
+        android:key="data_retention_days"
+        android:title="@string/restriction_data_retention_title"
+        android:restrictionType="integer"
+        android:description="@string/restriction_data_retention_desc"
+        android:defaultValue="90" />
+    <restriction
+        android:key="allow_export"
+        android:title="@string/restriction_allow_export_title"
+        android:restrictionType="bool"
+        android:description="@string/restriction_allow_export_desc"
+        android:defaultValue="true" />
+    <restriction
+        android:key="require_biometric_vault"
+        android:title="@string/restriction_biometric_vault_title"
+        android:restrictionType="bool"
+        android:description="@string/restriction_biometric_vault_desc"
+        android:defaultValue="false" />
+</restrictions>

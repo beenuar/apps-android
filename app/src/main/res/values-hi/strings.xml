@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deepfake Shield</string>
+    <string name="ok">ठीक है</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="close">बंद करें</string>
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं</string>
+    <string name="skip">छोड़ें</string>
+    <string name="next">अगला</string>
+    <string name="back">वापस</string>
+    <string name="done">हो गया</string>
+    <string name="save">सहेजें</string>
+    <string name="delete">हटाएं</string>
+    <string name="share">साझा करें</string>
+    <string name="loading">लोड हो रहा है…</string>
+    <string name="protection_on">सुरक्षा चालू</string>
+    <string name="protection_off">सुरक्षा बंद</string>
+    <string name="you_are_protected">✓ आप सुरक्षित हैं</string>
+    <string name="welcome_title">Deepfake Shield में आपका स्वागत है</string>
+    <string name="video_shield">वीडियो शील्ड</string>
+    <string name="message_shield">मैसेज शील्ड</string>
+    <string name="call_shield">कॉल शील्ड</string>
+    <string name="severity_low">कम जोखिम</string>
+    <string name="severity_medium">मध्यम जोखिम</string>
+    <string name="severity_high">उच्च जोखिम</string>
+    <string name="severity_critical">गंभीर</string>
+    <string name="home_title">सुरक्षा डैशबोर्ड</string>
+    <string name="alerts_title">अलर्ट</string>
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="error_generic">कुछ गलत हो गया</string>
+</resources>

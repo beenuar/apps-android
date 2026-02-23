@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deepfake Shield</string>
+    <string name="ok">حسناً</string>
+    <string name="cancel">إلغاء</string>
+    <string name="close">إغلاق</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="skip">تخطي</string>
+    <string name="next">التالي</string>
+    <string name="back">رجوع</string>
+    <string name="done">تم</string>
+    <string name="save">حفظ</string>
+    <string name="delete">حذف</string>
+    <string name="share">مشاركة</string>
+    <string name="loading">جاري التحميل…</string>
+    <string name="protection_on">الحماية مفعّلة</string>
+    <string name="protection_off">الحماية معطّلة</string>
+    <string name="you_are_protected">✓ أنت محمي</string>
+    <string name="welcome_title">مرحباً في Deepfake Shield</string>
+    <string name="video_shield">درع الفيديو</string>
+    <string name="message_shield">درع الرسائل</string>
+    <string name="call_shield">درع المكالمات</string>
+    <string name="severity_low">خطر منخفض</string>
+    <string name="severity_medium">خطر متوسط</string>
+    <string name="severity_high">خطر مرتفع</string>
+    <string name="severity_critical">حرج</string>
+    <string name="home_title">لوحة الأمان</string>
+    <string name="alerts_title">التنبيهات</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="error_generic">حدث خطأ ما</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Exclude security-sensitive data from cloud backups -->
+        <exclude domain="database" path="." />
+        <exclude domain="file" path="quarantine" />
+        <exclude domain="file" path="malware_hashes_downloaded.txt" />
+        <exclude domain="file" path="intelligence_cache" />
+        <exclude domain="file" path="threat_cache.json" />
+        <!-- DataStore prefs contain consent flags and permission state — must not transfer -->
+        <exclude domain="file" path="datastore" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="database" path="." />
+        <exclude domain="file" path="quarantine" />
+        <exclude domain="file" path="malware_hashes_downloaded.txt" />
+        <exclude domain="file" path="intelligence_cache" />
+        <exclude domain="file" path="threat_cache.json" />
+        <exclude domain="file" path="datastore" />
+    </device-transfer>
+</data-extraction-rules>

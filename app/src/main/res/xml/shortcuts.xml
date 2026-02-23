@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <shortcut
+        android:shortcutId="scan_message"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_message"
+        android:shortcutShortLabel="@string/shortcut_scan_message"
+        android:shortcutLongLabel="@string/shortcut_scan_message_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.deepfakeshield"
+            android:targetClass="com.deepfakeshield.MainActivity">
+            <extra android:name="shortcut" android:value="message_scan" />
+        </intent>
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="scan_video"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_video"
+        android:shortcutShortLabel="@string/shortcut_scan_video"
+        android:shortcutLongLabel="@string/shortcut_scan_video_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.deepfakeshield"
+            android:targetClass="com.deepfakeshield.MainActivity">
+            <extra android:name="shortcut" android:value="video_scan" />
+        </intent>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="daily_challenge"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_challenge"
+        android:shortcutShortLabel="@string/shortcut_challenge"
+        android:shortcutLongLabel="@string/shortcut_challenge_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.deepfakeshield"
+            android:targetClass="com.deepfakeshield.MainActivity">
+            <extra android:name="shortcut" android:value="daily_challenge" />
+        </intent>
+    </shortcut>
+    
+</shortcuts>

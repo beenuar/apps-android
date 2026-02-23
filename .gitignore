@@ -1,0 +1,42 @@
+# Built outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+build/
+.gradle/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+captures/
+
+# Signing
+*.jks
+*.keystore
+release.keystore
+
+# Firebase (contains API keys)
+google-services.json
+
+# Secrets
+*.env
+secrets.properties
+
+# Native build
+.cxx/
+.externalNativeBuild/
+
+# Misc
+*.hprof
+*.log
+
+# Large binary assets (>50MB)
+ml/src/main/assets/threat_intelligence_database.bin
+gradle/wrapper/gradle-dist/
+
+# Old distribution APKs
+dist/
+app-release.apk

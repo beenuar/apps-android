@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Cyble</string>
+    
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="done">Done</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="export">Export</string>
+    <string name="loading">Loading…</string>
+    
+    <!-- Protection Status -->
+    <string name="protection_on">Protection ON</string>
+    <string name="protection_off">Protection OFF</string>
+    <string name="you_are_protected">✓ You\'re Protected</string>
+    <string name="needs_attention">⚠ Needs Attention</string>
+    <string name="setup_incomplete">Setup Incomplete</string>
+    
+    <!-- Onboarding -->
+    <string name="welcome_title">Welcome to Cyble</string>
+    <string name="welcome_subtitle">Your personal safety companion for the digital world</string>
+    <string name="onboarding_promise">We help you spot deepfakes, scams, and suspicious calls.</string>
+    <string name="try_demo">Try Demo Mode</string>
+    <string name="skip_for_now">Skip for Now</string>
+    <string name="remind_later">Remind Me Later</string>
+    
+    <!-- Shield Types -->
+    <string name="video_shield">Video Shield</string>
+    <string name="message_shield">Message Shield</string>
+    <string name="call_shield">Call Shield</string>
+    
+    <string name="video_shield_desc">Detects deepfakes in videos</string>
+    <string name="message_shield_desc">Scans messages and links for scams</string>
+    <string name="call_shield_desc">Protects against scam calls</string>
+    
+    <!-- Severity Levels -->
+    <string name="severity_low">Low Risk</string>
+    <string name="severity_medium">Medium Risk</string>
+    <string name="severity_high">High Risk</string>
+    <string name="severity_critical">Critical</string>
+    
+    <!-- Threat Types -->
+    <string name="threat_deepfake">Deepfake Video</string>
+    <string name="threat_scam_message">Scam Message</string>
+    <string name="threat_malicious_link">Malicious Link</string>
+    <string name="threat_suspicious_call">Suspicious Call</string>
+    <string name="threat_phishing">Phishing Attempt</string>
+    <string name="threat_impersonation">Impersonation</string>
+    <string name="threat_otp_trap">OTP Trap</string>
+    <string name="threat_payment_scam">Payment Scam</string>
+    
+    <!-- Actions -->
+    <string name="action_delete_message">Delete This Message</string>
+    <string name="action_block_number">Block This Number</string>
+    <string name="action_report_scam">Report as Scam</string>
+    <string name="action_verify">Verify Through Official Channel</string>
+    <string name="action_do_not_click">Don\'t Click This Link</string>
+    <string name="action_hang_up">Hang Up Immediately</string>
+    <string name="action_mark_safe">Mark as Safe</string>
+    <string name="action_export_evidence">Export Evidence</string>
+    
+    <!-- Home Screen -->
+    <string name="home_title">Safety Dashboard</string>
+    <string name="recent_alerts">Recent Alerts</string>
+    <string name="next_best_action">Next Best Action</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="scan_video">Scan a Video</string>
+    <string name="scan_message">Scan a Message</string>
+    <string name="view_vault">View Vault</string>
+    <string name="run_diagnostics">Run Diagnostics</string>
+    
+    <!-- Alerts -->
+    <string name="alerts_title">Alerts</string>
+    <string name="no_alerts">No alerts yet</string>
+    <string name="no_alerts_desc">We\'ll notify you if we detect anything suspicious</string>
+    <string name="unhandled_alerts">Unhandled Alerts</string>
+    <string name="all_alerts">All Alerts</string>
+    <string name="filter_by_severity">Filter by Severity</string>
+    <string name="filter_by_type">Filter by Type</string>
+    
+    <!-- Alert Detail -->
+    <string name="what_happened">What Happened</string>
+    <string name="why_flagged">Why This Was Flagged</string>
+    <string name="recommended_actions">Recommended Actions</string>
+    <string name="confidence">Confidence</string>
+    <string name="technical_details">Technical Details</string>
+    <string name="mark_as_handled">Mark as Handled</string>
+    <string name="was_this_helpful">Was this helpful?</string>
+    
+    <!-- Vault -->
+    <string name="vault_title">Incident Vault</string>
+    <string name="vault_subtitle">Your evidence library</string>
+    <string name="no_vault_entries">No incidents stored</string>
+    <string name="no_vault_entries_desc">Evidence from critical alerts will be saved here</string>
+    <string name="export_vault">Export Vault</string>
+    <string name="vault_entry_count">%d items</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="protection_settings">Protection Settings</string>
+    <string name="protection_level">Protection Level</string>
+    <string name="alert_style">Alert Style</string>
+    <string name="simple_mode">Simple Mode</string>
+    <string name="simple_mode_desc">Larger text and fewer options</string>
+    <string name="data_privacy">Data &amp; Privacy</string>
+    <string name="privacy_center">Privacy Center</string>
+    <string name="data_retention">Data Retention</string>
+    <string name="export_all_data">Export All Data</string>
+    <string name="delete_all_data">Delete All Data</string>
+    
+    <!-- Privacy Center -->
+    <string name="privacy_title">Privacy &amp; Trust Center</string>
+    <string name="what_we_collect">What We Collect</string>
+    <string name="what_we_store">What We Store</string>
+    <string name="what_we_never_do">What We Never Do</string>
+    <string name="local_only">Local-Only by Default</string>
+    <string name="privacy_explanation">All scans and analysis happen on your device. Your data never leaves your phone unless you explicitly choose to share it.</string>
+    
+    <!-- Education Center -->
+    <string name="education_title">Learn About Safety</string>
+    <string name="scam_playbook">Scam Playbook</string>
+    <string name="deepfake_basics">Deepfake Basics</string>
+    <string name="call_verification">Call Verification Toolkit</string>
+    
+    <!-- Diagnostics -->
+    <string name="diagnostics_title">System Health</string>
+    <string name="run_self_test">Run Self-Test</string>
+    <string name="check_protection">Am I Protected?</string>
+    <string name="permissions_status">Permissions Status</string>
+    <string name="all_systems_ok">All Systems OK</string>
+    
+    <!-- Permissions -->
+    <string name="permission_needed">Permission Needed</string>
+    <string name="permission_why">Why We Need This</string>
+    <string name="permission_sms">SMS Permission</string>
+    <string name="permission_sms_why">To scan incoming messages for scams</string>
+    <string name="permission_notifications">Notification Access</string>
+    <string name="permission_notifications_why">To scan notifications for suspicious links</string>
+    <string name="permission_phone">Phone Permission</string>
+    <string name="permission_phone_why">To protect you from scam calls</string>
+    <string name="permission_overlay">Overlay Permission</string>
+    <string name="permission_overlay_why">To show instant warnings over suspicious content</string>
+    
+    <!-- Service Names -->
+    <string name="notification_listener_service_name">Cyble Notification Scanner</string>
+    <string name="accessibility_service_description">Cyble can scan message notifications for scams when the notification service cannot access message content. Enable in Accessibility settings for full message protection.</string>
+    <string name="service_protection_active">Protection Active</string>
+    <string name="service_scanning">Scanning for threats…</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_critical">Critical Security Alerts</string>
+    <string name="notification_channel_alerts">Security Alerts</string>
+    <string name="notification_channel_service">Protection Service</string>
+    <string name="notification_channel_info">Information</string>
+    
+    <!-- Empty States -->
+    <string name="empty_state_generic">Nothing here yet</string>
+    
+    <!-- Error Messages -->
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_permission_denied">Permission denied</string>
+    <string name="error_no_data">No data available</string>
+    
+    <!-- Success Messages -->
+    <string name="success_saved">Saved successfully</string>
+    <string name="success_exported">Exported successfully</string>
+    <string name="success_deleted">Deleted successfully</string>
+    
+    <!-- Widget -->
+    <string name="widget_description">Cyble protection status and quick scan</string>
+    
+    <!-- Managed Configuration (Enterprise / EMM) -->
+    <string name="restriction_master_protection_title">Master Protection</string>
+    <string name="restriction_master_protection_desc">Enable or disable all protection shields. When set by admin, overrides user preference.</string>
+    <string name="restriction_protection_level_title">Protection Level</string>
+    <string name="restriction_protection_level_desc">Detection sensitivity: gentle, balanced, or strict.</string>
+    <string name="restriction_data_retention_title">Data Retention (days)</string>
+    <string name="restriction_data_retention_desc">How long to keep alert data before automatic cleanup (7–365 days).</string>
+    <string name="restriction_allow_export_title">Allow Data Export</string>
+    <string name="restriction_allow_export_desc">Permit users to export alerts and evidence. Disable for maximum data control.</string>
+    <string name="restriction_biometric_vault_title">Require Biometric for Vault</string>
+    <string name="restriction_biometric_vault_desc">Force biometric authentication before accessing the incident vault.</string>
+    <string-array name="restriction_protection_level_entries">
+        <item>Gentle</item>
+        <item>Balanced</item>
+        <item>Strict</item>
+    </string-array>
+    <string-array name="restriction_protection_level_values">
+        <item>gentle</item>
+        <item>balanced</item>
+        <item>strict</item>
+    </string-array>
+    
+    <!-- App Shortcuts -->
+    <string name="shortcut_scan_message">Scan Message</string>
+    <string name="shortcut_scan_message_long">Scan a message for scams</string>
+    <string name="shortcut_scan_video">Scan Video</string>
+    <string name="shortcut_scan_video_long">Scan a video for deepfakes</string>
+    <string name="shortcut_challenge">Daily Challenge</string>
+    <string name="shortcut_challenge_long">Today\'s safety challenge</string>
+</resources>

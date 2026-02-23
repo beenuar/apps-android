@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deepfake Shield</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="close">Cerrar</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="skip">Omitir</string>
+    <string name="next">Siguiente</string>
+    <string name="back">Atrás</string>
+    <string name="done">Hecho</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Eliminar</string>
+    <string name="share">Compartir</string>
+    <string name="export">Exportar</string>
+    <string name="loading">Cargando…</string>
+    <string name="protection_on">Protección ACTIVA</string>
+    <string name="protection_off">Protección DESACTIVADA</string>
+    <string name="you_are_protected">✓ Estás Protegido</string>
+    <string name="needs_attention">⚠ Necesita Atención</string>
+    <string name="welcome_title">Bienvenido a Deepfake Shield</string>
+    <string name="welcome_subtitle">Tu compañero de seguridad digital</string>
+    <string name="video_shield">Escudo de Video</string>
+    <string name="message_shield">Escudo de Mensajes</string>
+    <string name="call_shield">Escudo de Llamadas</string>
+    <string name="severity_low">Riesgo Bajo</string>
+    <string name="severity_medium">Riesgo Medio</string>
+    <string name="severity_high">Riesgo Alto</string>
+    <string name="severity_critical">Crítico</string>
+    <string name="home_title">Panel de Seguridad</string>
+    <string name="alerts_title">Alertas</string>
+    <string name="no_alerts">Sin alertas aún</string>
+    <string name="settings_title">Configuración</string>
+    <string name="privacy_title">Centro de Privacidad</string>
+    <string name="error_generic">Algo salió mal</string>
+    <string name="widget_description">Estado de protección y escaneo rápido</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deepfake Shield</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="close">Fechar</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="skip">Pular</string>
+    <string name="next">Próximo</string>
+    <string name="back">Voltar</string>
+    <string name="done">Concluído</string>
+    <string name="save">Salvar</string>
+    <string name="delete">Excluir</string>
+    <string name="share">Compartilhar</string>
+    <string name="loading">Carregando…</string>
+    <string name="protection_on">Proteção ATIVADA</string>
+    <string name="protection_off">Proteção DESATIVADA</string>
+    <string name="you_are_protected">✓ Você está Protegido</string>
+    <string name="welcome_title">Bem-vindo ao Deepfake Shield</string>
+    <string name="video_shield">Escudo de Vídeo</string>
+    <string name="message_shield">Escudo de Mensagens</string>
+    <string name="call_shield">Escudo de Chamadas</string>
+    <string name="severity_low">Risco Baixo</string>
+    <string name="severity_medium">Risco Médio</string>
+    <string name="severity_high">Risco Alto</string>
+    <string name="severity_critical">Crítico</string>
+    <string name="home_title">Painel de Segurança</string>
+    <string name="alerts_title">Alertas</string>
+    <string name="settings_title">Configurações</string>
+    <string name="error_generic">Algo deu errado</string>
+</resources>

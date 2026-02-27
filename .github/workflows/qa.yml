@@ -45,6 +45,12 @@ jobs:
         run: ./gradlew testReleaseUnitTest --no-daemon
 
       - name: Build Release APK
+        env:
+          RELEASE_BUILD: "1"
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: ./gradlew assembleRelease --no-daemon
 
       - name: Upload Test Report

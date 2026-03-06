@@ -22,6 +22,8 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          cache-read-only: false
         
       - name: Run Detekt
         run: ./gradlew detekt
@@ -39,6 +41,8 @@ jobs:
       #caches the gradle builds and tests and hence skip unit tests and builds for unchanged modules saving a lot of time
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          cache-read-only: false
         
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew

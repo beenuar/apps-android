@@ -76,6 +76,7 @@ class UserPreferences @Inject constructor(
         val TOR_DISCLOSURE_ACCEPTED = booleanPreferencesKey("tor_disclosure_accepted")
         val TOR_LAST_TEST_RESULT = stringPreferencesKey("tor_last_test_result")
         val TOR_EXIT_COUNTRY = stringPreferencesKey("tor_exit_country")
+        val USER_COUNTRY = stringPreferencesKey("user_country")
     }
 
     // Flows
@@ -128,6 +129,8 @@ class UserPreferences @Inject constructor(
     val unlockedAchievements: Flow<Set<String>> = dataStore.data.map { it[Keys.UNLOCKED_ACHIEVEMENTS] ?: emptySet() }
     val overlayBubbleEnabled: Flow<Boolean> = dataStore.data.map { it[Keys.OVERLAY_BUBBLE_ENABLED] ?: true }
 
+    val userCountry: Flow<String> = dataStore.data.map { it[Keys.USER_COUNTRY] ?: "USA" }
+    
     suspend fun unlockAchievement(id: String) {
         dataStore.edit { prefs ->
             val current = prefs[Keys.UNLOCKED_ACHIEVEMENTS] ?: emptySet()
@@ -270,5 +273,8 @@ class UserPreferences @Inject constructor(
     suspend fun setOverlayBubbleEnabled(enabled: Boolean) {
         dataStore.edit { it[Keys.OVERLAY_BUBBLE_ENABLED] = enabled }
     }
+
+    suspend fun setUserCountry(country: String) { dataStore.edit { it[Keys.USER_COUNTRY] = country } }
+
 
 }

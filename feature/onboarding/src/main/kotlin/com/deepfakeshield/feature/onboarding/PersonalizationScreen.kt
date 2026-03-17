@@ -28,9 +28,10 @@ private data class Priority(val id: String, val title: String, val description: 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PersonalizationScreen(onComplete: (Set<String>) -> Unit) {
+fun PersonalizationScreen(onComplete: (Set<String>, String) -> Unit) {
     val haptic = LocalHapticFeedback.current
     var selected by remember { mutableStateOf(setOf<String>()) }
+    var selectedCountry by remember { mutableStateOf("US") }
 
     val priorities = listOf(
         Priority("scam_protection", "Scam Protection", "Block scam calls, SMS & phishing", Icons.Default.PhoneDisabled, Color(0xFFF44336)),
@@ -81,16 +82,41 @@ fun PersonalizationScreen(onComplete: (Set<String>) -> Unit) {
                 }
             }
 
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(16.dp))
+            Divider(color = MaterialTheme.colorScheme.outlineVariant, thickness = 1.dp)
+            Spacer(Modifier.height(16.dp))
+
+            Text("Where are you located?", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text("This helps us route reports to the correct authorities and provide local emergency contacts.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
+            
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                listOf("USA" to "US", "India" to "IN").forEach { (name, code) ->
+                    val isCountrySelected = selectedCountry == code
+                    Card(
+                        Modifier.weight(1f).height(60.dp).clip(RoundedCornerShape(12.dp)).clickable {
+                            selectedCountry = code
+                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                        }.then(if (isCountrySelected) Modifier.border(2.dp, MaterialTheme.colorScheme.primary, RoundedCornerShape(12.dp)) else Modifier),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = CardDefaults.cardColors(containerColor = if (isCountrySelected) MaterialTheme.colorScheme.primary.copy(alpha = 0.1f) else MaterialTheme.colorScheme.surface)
+                    ) {
+                        Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+                            Text(name, fontWeight = if (isCountrySelected) FontWeight.Bold else FontWeight.Normal, color = if (isCountrySelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
+                        }
+                    }
+                }
+            }
+
+            Spacer(Modifier.height(16.dp))
             Button(
-                onClick = { onComplete(selected) },
+                onClick = { onComplete(selected, selectedCountry) },
                 Modifier.fillMaxWidth().height(52.dp),
                 shape = RoundedCornerShape(16.dp),
                 enabled = selected.size >= 3
             ) {
                 Text(if (selected.size >= 3) "Continue (${selected.size} selected)" else "Select at least 3", fontWeight = FontWeight.SemiBold)
             }
-            TextButton(onClick = { onComplete(emptySet()) }) {
+            TextButton(onClick = { onComplete(emptySet(), selectedCountry) }) {
                 Text("Skip for now", color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }

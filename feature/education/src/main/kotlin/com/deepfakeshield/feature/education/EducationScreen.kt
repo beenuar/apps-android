@@ -1,5 +1,7 @@
 package com.deepfakeshield.feature.education
 
+import com.deepfakeshield.data.preferences.UserPreferences
+
 import android.content.Intent
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -29,7 +31,8 @@ import androidx.compose.ui.unit.sp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EducationScreen(
-    onNavigateBack: () -> Unit = {}
+    onNavigateBack: () -> Unit = {},
+    userPreferences: UserPreferences
 ) {
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
     val tabs = listOf("Learn", "Quiz", "Tips")

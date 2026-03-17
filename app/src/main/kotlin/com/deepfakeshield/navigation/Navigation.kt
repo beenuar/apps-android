@@ -288,8 +288,9 @@ fun DeepfakeShieldNavHost(
         // Personalization (after permissions, before home)
         composable(Screen.Personalization.route) {
             com.deepfakeshield.feature.onboarding.PersonalizationScreen(
-                onComplete = { priorities ->
+                onComplete = { priorities, country ->
                     scope.launch {
+                        userPreferences.setUserCountry(country)
                         userPreferences.setOnboardingCompleted(true)
                         navController.navigate(Screen.Home.route) {
                             popUpTo(Screen.Personalization.route) { inclusive = true }
@@ -400,7 +401,7 @@ fun DeepfakeShieldNavHost(
         }
 
         composable(Screen.Education.route) {
-            EducationScreen(onNavigateBack = { navController.popBackStack() })
+            EducationScreen(onNavigateBack = { navController.popBackStack() }, userPreferences = userPreferences)
         }
 
         composable(Screen.Diagnostics.route) {
@@ -517,7 +518,7 @@ fun DeepfakeShieldNavHost(
         }
 
         composable(Screen.EmergencySos.route) {
-            EmergencySosScreen(onNavigateBack = { navController.popBackStack() })
+            EmergencySosScreen(onNavigateBack = { navController.popBackStack() }, userPreferences = userPreferences)
         }
         composable(Screen.DarkWebMonitor.route) {
             DarkWebMonitorScreen(onNavigateBack = { navController.popBackStack() })
@@ -570,7 +571,7 @@ fun DeepfakeShieldNavHost(
         }
 
         composable(Screen.ScamRecovery.route) {
-            com.deepfakeshield.feature.home.ScamRecoveryScreen(onNavigateBack = { navController.popBackStack() })
+            com.deepfakeshield.feature.home.ScamRecoveryScreen(onNavigateBack = { navController.popBackStack() }, userPreferences = userPreferences)
         }
 
         composable(Screen.WeeklyReport.route) {

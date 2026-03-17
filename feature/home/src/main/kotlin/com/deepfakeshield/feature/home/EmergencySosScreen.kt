@@ -1,5 +1,7 @@
 package com.deepfakeshield.feature.home
 
+import com.deepfakeshield.data.preferences.UserPreferences
+
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -37,7 +39,7 @@ import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EmergencySosScreen(onNavigateBack: () -> Unit) {
+fun EmergencySosScreen(onNavigateBack: () -> Unit, userPreferences: UserPreferences) {
     val context = LocalContext.current
     var emergencyContacts by remember { mutableStateOf(listOf("Emergency Services (911)", "Local Police", "Cyber Crime Helpline")) }
     var showAddDialog by remember { mutableStateOf(false) }

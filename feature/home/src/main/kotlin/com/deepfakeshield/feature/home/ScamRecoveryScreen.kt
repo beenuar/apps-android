@@ -1,5 +1,7 @@
 package com.deepfakeshield.feature.home
 
+import com.deepfakeshield.data.preferences.UserPreferences
+
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -33,7 +35,7 @@ private data class RecoveryStep(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScamRecoveryScreen(onNavigateBack: () -> Unit) {
+fun ScamRecoveryScreen(onNavigateBack: () -> Unit, userPreferences: UserPreferences) {
     val context = LocalContext.current
     var expandedStep by remember { mutableIntStateOf(-1) }
     var completedSteps by remember { mutableStateOf(setOf<Int>()) }

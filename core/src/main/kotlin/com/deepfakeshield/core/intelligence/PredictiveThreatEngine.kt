@@ -406,7 +406,7 @@ class PredictiveThreatEngine @Inject constructor() {
             "gift_card_scam" -> listOf(
                 "No legitimate company demands gift cards",
                 "Call back using official number",
-                "Report to FTC"
+                "Report to local authorities (e.g. FTC/I4C)"
             )
             else -> listOf(
                 "Verify through official channels",

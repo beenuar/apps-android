@@ -137,21 +137,29 @@ fun EmergencySosScreen(onNavigateBack: () -> Unit, userPreferences: UserPreferen
             // Quick call buttons
             Text("Quick Emergency Contacts", fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleMedium, modifier = Modifier.fillMaxWidth())
 
+            val country by userPreferences.userCountry.collectAsState(initial = "USA")
+
             // Emergency services
-            QuickCallCard(Icons.Default.LocalHospital, "Emergency Services", "911", Color(0xFFF44336)) {
-                dialNumber(context, "911")
+            QuickCallCard(Icons.Default.LocalHospital, "Emergency Services", if (country == "IN") "100 / 112" else "911", Color(0xFFF44336)) {
+                dialNumber(context, if (country == "IN") "112" else "911")
             }
 
-            QuickCallCard(Icons.Default.LocalPolice, "Police Non-Emergency", "311", Color(0xFF2196F3)) {
-                dialNumber(context, "311")
+            QuickCallCard(Icons.Default.LocalPolice, "Police Non-Emergency", if (country == "IN") "100" else "311", Color(0xFF2196F3)) {
+                dialNumber(context, if (country == "IN") "100" else "311")
             }
 
-            QuickCallCard(Icons.Default.ReportProblem, "FTC Fraud Reporting", "1-877-382-4357", Color(0xFFFF9800)) {
-                dialNumber(context, "18773824357")
+            if (country == "IN") {
+                QuickCallCard(Icons.Default.ReportProblem, "I4C Cybercrime Reporting", "1930", Color(0xFFFF9800)) {
+                    dialNumber(context, "1930")
+                }
+            } else {
+                QuickCallCard(Icons.Default.ReportProblem, "FTC Fraud Reporting", "1-877-382-4357", Color(0xFFFF9800)) {
+                    dialNumber(context, "18773824357")
+                }
             }
 
-            QuickCallCard(Icons.Default.Psychology, "Identity Theft Hotline", "1-877-438-4338", Color(0xFF9C27B0)) {
-                dialNumber(context, "18774384338")
+            QuickCallCard(Icons.Default.Psychology, "Identity Theft Hotline", if (country == "IN") "1930" else "1-877-438-4338", Color(0xFF9C27B0)) {
+                dialNumber(context, if (country == "IN") "1930" else "18774384338")
             }
 
             // Scam-specific actions

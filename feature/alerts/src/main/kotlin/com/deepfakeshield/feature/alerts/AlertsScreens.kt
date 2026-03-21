@@ -466,7 +466,7 @@ fun AlertDetailScreen(
                                 OutlinedButton(
                                     onClick = {
                                         try {
-                                            ctx.startActivity(viewModel.createFtcReportIntent())
+                                            ctx.startActivity(viewModel.createReportIntent())
                                         } catch (_: Exception) {
                                             android.widget.Toast.makeText(ctx, "No browser app available", android.widget.Toast.LENGTH_SHORT).show()
                                         }
@@ -475,7 +475,7 @@ fun AlertDetailScreen(
                                 ) {
                                     Icon(Icons.Filled.Share, contentDescription = null, Modifier.size(18.dp))
                                     Spacer(Modifier.width(8.dp))
-                                    Text("Report to FTC (reportfraud.ftc.gov)")
+                                    Text("Report to ${uiState.reportingAgencyName} (${uiState.reportingAgencyUrl.removePrefix("https://").removeSuffix("/")})")
                                 }
                             }
                             if (!alert.isHandled) {

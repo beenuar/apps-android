@@ -9,6 +9,7 @@ import com.deepfakeshield.data.repository.AlertRepository
 import com.deepfakeshield.data.repository.AuditLogRepository
 import com.deepfakeshield.data.repository.DomainReputationRepository
 import com.deepfakeshield.data.repository.PhoneReputationRepository
+import com.deepfakeshield.data.preferences.UserPreferences
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -18,7 +19,10 @@ data class AlertDetailUiState(
     val alert: AlertEntity? = null,
     val isLoading: Boolean = true,
     val error: String? = null,
-    val blockAndReportSuccess: Boolean = false
+    val blockAndReportSuccess: Boolean = false,
+    val reportingAgencyName: String = "FTC",
+    val reportingAgencyUrl: String = "https://reportfraud.ftc.gov/#/",
+    val reportingAgencyPhone: String = "1-877-382-4357"
 )
 
 @HiltViewModel
@@ -27,7 +31,8 @@ class AlertDetailViewModel @Inject constructor(
     private val alertRepository: AlertRepository,
     private val phoneReputationRepository: PhoneReputationRepository,
     private val domainReputationRepository: DomainReputationRepository,
-    private val auditLogRepository: AuditLogRepository
+    private val auditLogRepository: AuditLogRepository,
+    private val userPreferences: UserPreferences
 ) : ViewModel() {
 
     private val alertId: Long = savedStateHandle.get<Long>("alertId")
@@ -39,6 +44,29 @@ class AlertDetailViewModel @Inject constructor(
 
     init {
         loadAlert()
+        observeCountry()
+    }
+
+    private fun observeCountry() {
+        userPreferences.userCountry
+            .onEach { country ->
+                _uiState.update { 
+                    if (country == "IN") {
+                        it.copy(
+                            reportingAgencyName = "I4C",
+                            reportingAgencyUrl = "https://cybercrime.gov.in/",
+                            reportingAgencyPhone = "1930"
+                        )
+                    } else {
+                        it.copy(
+                            reportingAgencyName = "FTC",
+                            reportingAgencyUrl = "https://reportfraud.ftc.gov/#/",
+                            reportingAgencyPhone = "1-877-382-4357"
+                        )
+                    }
+                }
+            }
+            .launchIn(viewModelScope)
     }
 
     private fun loadAlert() {
@@ -110,12 +138,10 @@ class AlertDetailViewModel @Inject constructor(
     }
 
     /**
-     * Creates Intent to open FTC Report Fraud page - user can submit report.
+     * Creates Intent to open the reporting agency's website.
      */
-    fun createFtcReportIntent(): Intent {
-        @Suppress("UNUSED_VARIABLE")
-        val alert = _uiState.value.alert
-        val url = "https://reportfraud.ftc.gov/#/"
+    fun createReportIntent(): Intent {
+        val url = _uiState.value.reportingAgencyUrl
         return Intent(Intent.ACTION_VIEW).apply {
             setPackage(null)
             data = android.net.Uri.parse(url)

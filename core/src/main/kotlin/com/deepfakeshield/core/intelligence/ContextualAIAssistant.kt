@@ -216,7 +216,7 @@ class ContextualAIAssistant @Inject constructor() {
                     details = when (threatType) {
                         "SCAM_SMS" -> "Forward to 7726 (SPAM) for your carrier"
                         "PHISHING_URL" -> "Report to Anti-Phishing Working Group (reportphishing@apwg.org)"
-                        "SCAM_CALL" -> "Report to FTC at ReportFraud.ftc.gov"
+                        "SCAM_CALL" -> "Report to local authorities (e.g., FTC or I4C)"
                         else -> "Report to appropriate authorities"
                     }
                 )

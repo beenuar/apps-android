@@ -49,21 +49,30 @@ fun ScamRecoveryScreen(onNavigateBack: () -> Unit, userPreferences: UserPreferen
         "Investment/Crypto Scam" to "Lost money in fake investment scheme"
     )
 
-    val steps = remember { listOf(
+    val country by userPreferences.userCountry.collectAsState(initial = "USA")
+    val steps = remember(country) { listOf(
         RecoveryStep(1, "Stop All Contact", "Do NOT respond to, call back, or engage further with the scammer. Block their number/email immediately.", Icons.Default.Block, Color(0xFFF44336),
-            listOf("Block the scammer's number" to "tel:*67", "Report to carrier (T-Mobile)" to "tel:611"), "IMMEDIATE"),
+            listOf("Block the scammer's number" to "tel:*67", "Report to carrier" to "tel:611"), "IMMEDIATE"),
         RecoveryStep(2, "Freeze Your Credit", "Contact all 3 credit bureaus to freeze your credit. This prevents scammers from opening accounts in your name.", Icons.Default.CreditCard, Color(0xFF2196F3),
-            listOf("Equifax Freeze" to "https://www.equifax.com/personal/credit-report-services/credit-freeze/", "Experian Freeze" to "https://www.experian.com/freeze/center.html", "TransUnion Freeze" to "https://www.transunion.com/credit-freeze"), "CRITICAL"),
+            if (country == "IN") {
+                listOf("CIBIL Dispute" to "https://www.cibil.com/consumer-dispute-resolution", "Equifax India" to "https://www.equifax.co.in/", "Experian India" to "https://www.experian.in/")
+            } else {
+                listOf("Equifax Freeze" to "https://www.equifax.com/personal/credit-report-services/credit-freeze/", "Experian Freeze" to "https://www.experian.com/freeze/center.html", "TransUnion Freeze" to "https://www.transunion.com/credit-freeze")
+            }, "CRITICAL"),
         RecoveryStep(3, "Change All Passwords", "Change passwords for any accounts that may be compromised. Start with email and banking.", Icons.Default.Password, Color(0xFF9C27B0),
             listOf("Google Account" to "https://myaccount.google.com/security", "Apple ID" to "https://appleid.apple.com"), "CRITICAL"),
         RecoveryStep(4, "Contact Your Bank", "Notify your bank and credit card companies of potential fraud. Request new cards if numbers were shared.", Icons.Default.AccountBalance, Color(0xFF4CAF50),
             listOf(), "CRITICAL"),
-        RecoveryStep(5, "Report to Authorities", "File reports with the FTC, FBI IC3, and local police. This creates an official record.", Icons.Default.LocalPolice, Color(0xFF3F51B5),
-            listOf("FTC ReportFraud.ftc.gov" to "https://reportfraud.ftc.gov/", "FBI IC3" to "https://www.ic3.gov/", "IdentityTheft.gov" to "https://www.identitytheft.gov/"), "IMPORTANT"),
+        RecoveryStep(5, "Report to Authorities", if (country == "IN") "File reports with I4C, local police, and your bank. This creates an official record." else "File reports with the FTC, FBI IC3, and local police. This creates an official record.", Icons.Default.LocalPolice, Color(0xFF3F51B5),
+            if (country == "IN") {
+                listOf("I4C Cybercrime.gov.in" to "https://cybercrime.gov.in/", "National Consumer Helpline" to "https://consumerhelpline.gov.in/")
+            } else {
+                listOf("FTC ReportFraud.ftc.gov" to "https://reportfraud.ftc.gov/", "FBI IC3" to "https://www.ic3.gov/", "IdentityTheft.gov" to "https://www.identitytheft.gov/")
+            }, "IMPORTANT"),
         RecoveryStep(6, "Enable 2FA Everywhere", "Add two-factor authentication to all important accounts. Use an authenticator app, not SMS.", Icons.Default.PhoneAndroid, Color(0xFFFF9800),
             listOf("Google Authenticator" to "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2"), "IMPORTANT"),
         RecoveryStep(7, "Monitor Your Accounts", "Check bank statements, credit reports, and account activity daily for the next 90 days.", Icons.Default.MonitorHeart, Color(0xFF00BCD4),
-            listOf("AnnualCreditReport.com" to "https://www.annualcreditreport.com/"), "ONGOING"),
+            listOf(), "ONGOING"),
         RecoveryStep(8, "Document Everything", "Save all evidence: screenshots, emails, text messages, phone records, transaction records.", Icons.Default.PhotoCamera, Color(0xFF795548),
             listOf(), "ONGOING")
     ) }

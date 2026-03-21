@@ -55,7 +55,7 @@ fun EducationScreen(
             }
 
             when (selectedTab) {
-                0 -> LearnTab()
+                0 -> LearnTab(userPreferences)
                 1 -> QuizTab()
                 2 -> TipsTab()
             }
@@ -65,7 +65,8 @@ fun EducationScreen(
 
 // ===== LEARN TAB =====
 @Composable
-private fun LearnTab() {
+private fun LearnTab(userPreferences: UserPreferences) {
+    val country by userPreferences.userCountry.collectAsState(initial = "USA")
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -110,7 +111,7 @@ private fun LearnTab() {
                 "Contact your bank immediately to freeze accounts",
                 "Change passwords on all affected accounts",
                 "Report to local police and file a complaint",
-                "Report to FTC at reportfraud.ftc.gov",
+                if (country == "IN") "Report to I4C at cybercrime.gov.in" else "Report to FTC at reportfraud.ftc.gov",
                 "Monitor your credit for unusual activity",
                 "Don't blame yourself - scammers are professionals"
             )
